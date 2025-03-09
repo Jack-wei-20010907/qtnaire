@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("/rock.jpg");
+  background-size: cover;
+  z-index: -555;
+}
+
+.divCss {
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 背景模糊容器 */
+.blurContainer {
+  background: rgba(255, 255, 255, 0.4); // 主要背景（半透明白）
+  backdrop-filter: blur(15px); // 模糊強度
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2); // 霧面玻璃邊框
+  padding: 20px;
+  color: #f5f5f5; // 主要文字顏色
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); // 柔和陰影
+}
+
+.buttonCss {
+  color: #fff; // 文字顏色 (白色)
+  background: linear-gradient(45deg, #3a3a3a, #5a5a5a); // 漸變背景
+  border: 1px solid black; // 邊框顏色
+  cursor: pointer; // 滑鼠變成手型
+  transition: all 0.3s ease; // 動畫效果
+
+  &:hover {
+    background: linear-gradient(45deg, #5a5a5a, #7a7a7a); // 懸停變亮
+    border-color: #fff; // 邊框變白
+  }
+
+  &:active {
+    transform: scale(0.95); // 點擊時縮小
+  }
+}

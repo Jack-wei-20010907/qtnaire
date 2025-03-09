@@ -1,0 +1,77 @@
+<div class="divTitle blurContainer">
+  <span class="spanTitle">動態問卷</span>
+  <span class="spanSpace"></span>
+  <button class="buttonLogin buttonCss" (click)="buttonLogin()">LOGIN</button>
+</div>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+<div class="divCss">
+  <div class="divSearch blurContainer">
+    <input
+      class="inputSearchName"
+      placeholder="  請輸入問卷名稱"
+      [(ngModel)]="qtName"
+    />
+    <br />
+    <br />
+    <!-- 設定最大(maxDate)最小(minDate)選擇時間 -->
+    <!-- 別且將使用者選擇的內容使用ngModel做綁定 -->
+    <!-- 當使用者選擇完起始時間觸發更改結束時間的最大值 -->
+    <input
+      class="inputDate"
+      type="date"
+      [(ngModel)]="startDate"
+      [min]="minDate"
+      [max]="maxDate"
+      (change)="changeSetDate()"
+    />
+    <span class="spanWave">　～　</span>
+    <!-- 當起始時間為選擇時，不能選擇結束時間(disabled) -->
+    <!-- 最小時間為使用者選擇的起始時間 -->
+    <!-- 結束時間的max值為使用者選擇完起始時間後去設定的changeSDate() -->
+    <input
+      class="inputDate"
+      type="date"
+      [(ngModel)]="endDate"
+      [min]="startDate"
+      [max]="endMaxDate"
+    />
+
+    <button class="buttonSearch buttonCss" (click)="buttonSearch()">
+      搜尋
+    </button>
+  </div>
+</div>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+<div class="divCss">
+  <div class="divTable blurContainer">
+    <table class="tableQt">
+      <thead>
+        <tr>
+          <th>編號</th>
+          <th>名稱</th>
+          <th>狀態</th>
+          <th>開始時間</th>
+          <th>結束時間</th>
+          <th>結果</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (item of tableData; track item.id) {
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.status }}</td>
+          <td>{{ item.startDate }}</td>
+          <td>{{ item.endDate }}</td>
+          <td>{{ item.result }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

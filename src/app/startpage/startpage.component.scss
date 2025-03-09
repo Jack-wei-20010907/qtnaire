@@ -1,0 +1,70 @@
+.divTitle {
+  border-radius: 0;
+  display: flex;
+  font-weight: bold;
+  .spanTitle {
+    margin-left: 1%;
+    font-size: 50px;
+  }
+  .spanSpace {
+    flex: 1 1 auto;
+  }
+  .buttonLogin {
+    margin-right: 1%;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 15px;
+  }
+}
+
+.divSearch {
+  width: 70%;
+  .inputSearchName {
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 15px;
+    width: -webkit-fill-available;
+  }
+
+  .inputDate,
+  .spanWave,
+  .inputDate,
+  .buttonSearch {
+    font-size: 30px;
+    border-radius: 15px;
+  }
+
+  .inputDate,
+  .inputDate {
+    width: 40%;
+  }
+
+  .buttonSearch {
+    width: 10%;
+    float: right;
+  }
+}
+
+.divTable {
+  width: 70%;
+  margin: 25px;
+  .tableQt {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+
+    th {
+      font-size: 35px;
+      font-weight: bold;
+      border: 2px solid black;
+      padding: 1%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    td {
+      font-size: 25px;
+      font-weight: bold;
+      border: 2px solid black;
+      padding: 1%;
+    }
+  }
+}

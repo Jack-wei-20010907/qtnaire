@@ -1,0 +1,91 @@
+<div class="divTitle blurContainer">
+  <span class="spanTitle">動態問卷</span>
+  <span class="spanSpace"></span>
+  <button class="buttonLogout buttonCss" (click)="buttonLogout()">
+    LOGOUT
+  </button>
+</div>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+<div class="divCss">
+  <div class="divSearch blurContainer">
+    <input
+      type="text"
+      class="inputSearchName"
+      placeholder="  請輸入問卷名稱"
+      [(ngModel)]="qtName"
+    />
+    <br />
+    <br />
+    <input
+      type="date"
+      class="inputDate"
+      [(ngModel)]="startDate"
+      [min]="minDate"
+      [max]="maxDate"
+      (change)="changeSetDate()"
+    />
+    <span class="spanWave">　～　</span>
+    <input
+      type="date"
+      class="inputDate"
+      [(ngModel)]="endDate"
+      [min]="startDate"
+      [max]="endMaxDate"
+    />
+
+    <button class="buttonSearch buttonCss" (click)="buttonSearch()">
+      搜尋
+    </button>
+  </div>
+</div>
+<!-- ---------------------------------------------------------------------------- -->
+
+<div class="divCss" style="padding: 0 2% 0 2%">  <!-- 上 右 下 左 -->
+  <div class="blurContainer divImgCss">
+    <div class="divImgCss"><img src="del.png" /></div>
+    <div class="divImgCss"><img src="add.png" /></div>
+  </div>
+</div>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+<div class="divCss">
+  <div class="divTable blurContainer">
+    <table class="tableQt">
+      <thead>
+        <tr>
+          <th class="checkboxCss">
+            @if (isAdmin) {
+            <input type="checkbox"/>
+            }
+          </th>
+          <th>編號</th>
+          <th>名稱</th>
+          <th>狀態</th>
+          <th>開始時間</th>
+          <th>結束時間</th>
+          <th>結果</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of tableData; track item.id) {
+        <tr>
+          <td class="checkboxCss">
+            @if (isAdmin) {
+            <input type="checkbox" />
+            }
+          </td>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.status }}</td>
+          <td>{{ item.startDate }}</td>
+          <td>{{ item.endDate }}</td>
+          <td>{{ item.result }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
